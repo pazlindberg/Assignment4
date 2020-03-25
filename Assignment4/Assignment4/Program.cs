@@ -208,7 +208,40 @@ namespace Assignment4
              * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
              * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
              */
+            string testCase = "((}}";
+            var lefts = new Stack<char>();
+            bool incorrClose = false;
 
+            foreach (var ch in testCase)
+            {
+                if(ch=='{'||ch=='('||ch=='['||ch=='<')
+                {
+                    lefts.Push(ch);
+                }
+                else if(ch=='}'||ch==')'||ch==']'||ch=='>')
+                {
+
+                    if(lefts.Count<1)
+                    {
+                        incorrClose = true;                      
+                    }
+                    else
+                    {
+                        var peeked = lefts.Peek();
+                        lefts.Pop();
+                        Console.WriteLine("{0}-{1}",peeked, ch);
+                        if ((ch == ')' && peeked != '(')) { incorrClose = true; }
+                        else if ((ch == ']' && peeked != '[')) { incorrClose = true; }
+                        else if ((ch == '}' && peeked != '{')) { incorrClose = true; }
+                        else if ((ch == '>' && peeked != '<')) { incorrClose = true; }
+                        else { incorrClose = false; }
+
+                    }
+                }
+                if (incorrClose) break; //out of loop in first error
+            }
+
+            Console.WriteLine(incorrClose);
         }
 
     }
