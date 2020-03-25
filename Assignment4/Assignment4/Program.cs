@@ -208,7 +208,7 @@ namespace Assignment4
              * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
              * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
              */
-            string testCase = "((}}";
+            string testCase = @"(()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );";
             var lefts = new Stack<char>();
             bool incorrClose = false;
 
