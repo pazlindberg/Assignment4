@@ -23,7 +23,6 @@ using System.Collections.Generic;
  * 
  */
 
-
 namespace Assignment4
 {
     class Program
@@ -273,21 +272,12 @@ namespace Assignment4
             if(!string.IsNullOrEmpty(input))
             {
                 Stack<char> reversed = new Stack<char>();
-                for(int i=0;i<input.Length;i++)
-                {
-                    reversed.Push(input[i]);
-                }
+                for(int i=0;i<input.Length;i++) reversed.Push(input[i]);
 
                 Console.Write("reversed: ");
-                foreach (var ch in reversed)
-                {
-                    Console.Write($"{ch}");
-                }
+                foreach (var ch in reversed) Console.Write($"{ch}");
             }
-            else
-                Console.WriteLine("write something next time!");
-
-
+            else Console.WriteLine("write something next time!");
         }
     }
 }
