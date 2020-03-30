@@ -87,20 +87,28 @@ namespace Assignment4
         static void ExamineList()
         {
             /*
-             * Loop this method untill the user inputs something to exit to main menue.
-             * Create a switch statement with cases '+' and '-'
-             * '+': Add the rest of the input to the list (The user could write +Adam and "Adam" would be added to the list)
-             * '-': Remove the rest of the input from the list (The user could write -Adam and "Adam" would be removed from the list)
-             * In both cases, look at the count and capacity of the list
-             * As a default case, tell them to use only + or -
-             * Below you can see some inspirational code to begin working.
+             2.​​ ​​ ​​ ​​ ​​ ​​ ​​ ​​När​ ​ökar​ ​listans​ ​kapacitet?​ ​(Alltså​ ​den​ ​underliggande​ ​arrayens​ ​storlek)
+                        SVAR: när mer utrymme måste allokeras för att matcha listans storlek
+
+            3.​​ ​​ ​​ ​​ ​​ ​​ ​​ ​​Med​ ​hur​ ​mycket​ ​ökar​ ​kapaciteten?
+                        SVAR: 4
+
+            4.​​ ​​ ​​ ​​ ​​ ​​ ​​ ​​Varför​ ​ökar​ ​inte​ ​listans​ ​kapacitet​ ​i​ ​samma​ ​takt​ ​som​ ​element​ ​läggs​ ​till?
+                        SVAR: för att hela arrayen måste då allokeras om vilket inte blir effektivt
+
+            5.​​ ​​ ​​ ​​ ​​ ​​ ​​ ​​Minskar​ ​kapaciteten​ ​när​ ​element​ ​tas​ ​bort​ ​ur​ ​listan?
+                        SVAR: nej, då måste man trimexcess:a detta
+
+            6.​​ ​​ ​​ ​​ ​​ ​​ ​​ ​​När​ ​är​ ​det​ ​då​ ​fördelaktigt​ ​att​ ​använda​ ​en​ ​egendefinierad​ ​​array​ istället​ ​för​ ​en​ ​lista? 
+                        SVAR: när man vet antalet element på förhand och behöver optimera koden
+
             */
             bool running = true;
             List<string> theList = new List<string>();
 
             do
             {
-                Console.WriteLine("list has: ");
+                Console.WriteLine("list has (capacity:{0}: ",theList.Capacity);
 
                 foreach (var c in theList) Console.Write(c + "\t");
 
@@ -140,6 +148,15 @@ namespace Assignment4
             */
             bool running = true;
             var queue = new Queue();
+            
+            queue.Enqueue("ICA​ ​öppnar​ ​och​ ​kön​ ​till​ ​kassan​ ​är​ ​tom");
+            queue.Enqueue("Kalle​ ​ställer​ ​sig​ ​i​ ​kön");
+            queue.Enqueue("​​Greta​ ​ställer​ ​sig​ ​i​ ​kön");
+            queue.Enqueue("Kalle​ ​blir​ ​expedierad​ ​och​ ​lämnar​ ​kön");
+            queue.Enqueue("Stina​ ​ställer​ ​sig​ ​i​ ​kön");
+            queue.Enqueue("​​Greta​ ​blir​ ​expedierad​ ​och​ ​lämnar​ ​kön");
+            queue.Enqueue("​​Olle​ ​ställer​ ​sig​ ​i​ ​kön"); //formatteringen ... men aja det funkar iaf
+
             do
             {
                 Console.WriteLine("queue has: ");
