@@ -32,7 +32,14 @@ namespace Assignment4
         /// The main method, vill handle the menues for the program
         /// </summary>
         /// <param name="args"></param>
-        static void Main()
+        private static string[] ica = { "ICA öppnar och kön till kassan är tom",
+        "Kalle ställer sig i kön",
+            "Greta ställer sig i kön",
+            "Kalle blir expedierad och lämnar kön",
+            "Stina ställer sig i kön",
+            "Greta blir expedierad och lämnar kön",
+            "Olle ställer sig i kön" };
+    static void Main()
         {
 
             while (true)
@@ -148,14 +155,16 @@ namespace Assignment4
             */
             bool running = true;
             var queue = new Queue();
-            
-            queue.Enqueue("ICA​ ​öppnar​ ​och​ ​kön​ ​till​ ​kassan​ ​är​ ​tom");
-            queue.Enqueue("Kalle​ ​ställer​ ​sig​ ​i​ ​kön");
-            queue.Enqueue("​​Greta​ ​ställer​ ​sig​ ​i​ ​kön");
-            queue.Enqueue("Kalle​ ​blir​ ​expedierad​ ​och​ ​lämnar​ ​kön");
-            queue.Enqueue("Stina​ ​ställer​ ​sig​ ​i​ ​kön");
-            queue.Enqueue("​​Greta​ ​blir​ ​expedierad​ ​och​ ​lämnar​ ​kön");
-            queue.Enqueue("​​Olle​ ​ställer​ ​sig​ ​i​ ​kön"); //formatteringen ... men aja det funkar iaf
+
+            //queue.Enqueue("ICA öppnar och kön till kassan är tom");
+            //queue.Enqueue("Kalle ställer sig i kön");
+            //queue.Enqueue("Greta ställer sig i kön");
+            //queue.Enqueue("Kalle blir expedierad och lämnar kön");
+            //queue.Enqueue("Stina ställer sig i kön");
+            //queue.Enqueue("Greta blir expedierad och lämnar kön");
+            //queue.Enqueue("Olle ställer sig i kön");
+            foreach (var s in ica) queue.Enqueue(s);
+
 
             do
             {
@@ -198,12 +207,20 @@ namespace Assignment4
         static void ExamineStack()
         {
             /*
-             * Loop this method until the user inputs something to exit to main menue.
-             * Create a switch with cases to push or pop items
-             * Make sure to look at the stack after pushing and and poping to see how it behaves
+             *  1.  Simulera ännu en gång ICA-kön på papper. Denna gång med en stack.
+                    Varför är det inte så smart att använda en stack i det här fallet?
+                        SVAR: lifo
+
+                2.  Implementera en ReverseText-metod som läser in en sträng från användaren och
+                    med hjälp av en stack vänder ordning på teckenföljden för att sedan skriva ut
+                    den omvända strängen till användaren. 
+
             */
             bool running = true;
             var stack = new Stack();
+
+            foreach (var s in ica) stack.Push(s);
+
             do
             {
                 Console.WriteLine("stack has: ");
