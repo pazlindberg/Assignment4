@@ -43,8 +43,9 @@ namespace Assignment4
                     + "\n1. Examine a List"
                     + "\n2. Examine a Queue"
                     + "\n3. Examine a Stack"
-                    + "\n4. CheckParanthesis" 
+                    + "\n4. CheckParanthesis"
                     + "\n5. ReverseText"
+                    + "\n6. RecursiveEven"
                     + "\n0. Exit the application");
                 char input = ' '; //Creates the character input to be used with the switch-case below.
                 try
@@ -72,6 +73,9 @@ namespace Assignment4
                         break;
                     case '5':
                         ReverseText();
+                        break;
+                    case '6':
+                        RecursiveEven();
                         break;
                     /*
                      * Extend the menu to include the recursive 
@@ -278,6 +282,30 @@ namespace Assignment4
                 foreach (var ch in reversed) Console.Write($"{ch}");
             }
             else Console.WriteLine("write something next time!");
+        }
+
+        private static int RecursiveEvenCalc(int n)
+        {
+            Console.WriteLine(n);
+            if (n == 0) return(1);
+            return(RecursiveEvenCalc(n-1)+2);
+        }
+        
+
+        /*
+         * jag vet inte varför men så fort jag ska tänka på rekursiva funktioner så blir det stopp i skallen
+         * 
+         * de är inte kompatibla med min skalle alla gånger - eller så måste jag vänja mig vid att tänka på dem mer,
+         * 
+         * det verkar vara kassa anlag för dem, lite som dyslexi, så jag vilar skallen och provar i morgon igen, för
+         * det blir nog krångligare än vad det är pga denna begränsning/ovana och jag tjänar inte så mkt på att sitta
+         * och nöta just nu helt enkelt
+         * 
+         */
+
+        private static void RecursiveEven() 
+        {
+            Console.WriteLine("Recursive Even 1" + RecursiveEvenCalc(1));
         }
     }
 }
