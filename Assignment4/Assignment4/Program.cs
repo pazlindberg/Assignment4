@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//some of this code should probably be generalised and whatnot - im not done and ill see how much thought i make into it or if i focus on other tasks when i works acc2specs
-
 namespace Assignment4
 {
     class Program
