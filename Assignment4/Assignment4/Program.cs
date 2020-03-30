@@ -262,7 +262,7 @@ namespace Assignment4
                 }
                 if (incorrClose) break; //out of loop in first error
             }
-            Console.WriteLine(incorrClose);
+            Console.WriteLine("incorrect close=" +incorrClose);
         }
 
         private static void ReverseText()
