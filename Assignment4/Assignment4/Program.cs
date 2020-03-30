@@ -2,6 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+ * Frågor/svar
+ * 
+ *  1.​​ Hur​ ​fungerar​ ​​stacken och​ ​​heapen?​ ​Förklara​ ​gärna​ ​med​ ​exempel​ ​eller​ ​skiss​ ​på​ ​dess grundläggande​ ​funktion
+        SVAR: >>se illustrationen som är inkluderat i lösningen (assignment4real4.png)<< - 
+        Två minnes strukturer, kan man säga, varav stacken håller "koll" på egen hand. När minne inte används så frigörs det
+        automatiskt etc, medan minne på heapen fortsätter att vara allokerat tills dess att garbage collector frigör det - så kallad 
+        fragmentering/defragmentering. Stacken lyder under principen last in first out.
+
+    2. ​​Vad​ ​är​ ​​Value Types ​respektive​ ​​Reference Types ​och​ ​vad​ ​skiljer​ ​dem​ ​åt?
+        SVAR: Enkelt uttryck, i C#, är värdetyper structs medan referenstyper är classes, och där värdetyper kan lagras både på stack och
+        medan referenstyper lagras på heapen i detta programmeringsspråk.
+
+    3. Följande​ ​metoder​ ​(​se ​bild ​nedan)​ ​genererar​ ​olika​ ​svar.​ ​Den​ ​första​ ​returnerar​ ​3,​ ​den  andra​ ​returnerar​ ​4,​ ​varför?
+        SVAR: Första exemplet demonstrerar en värdetyp med direkt access till värdet som variabeln används till, medan i det
+        sedanare exemplet så är variablerna _egentligen_ referenser - alltså pekar y på samma instans som x, varpå båda modifieras
+        vid ändringar. 
+
+ * 
+ */
+
+
 namespace Assignment4
 {
     class Program
