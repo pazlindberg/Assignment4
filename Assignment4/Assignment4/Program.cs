@@ -40,11 +40,12 @@ namespace Assignment4
         {
             while (true)
             {
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+                Console.WriteLine("\n\nPlease navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
                     + "\n1. Examine a List"
                     + "\n2. Examine a Queue"
                     + "\n3. Examine a Stack"
-                    + "\n4. CheckParanthesis"
+                    + "\n4. CheckParanthesis" 
+                    + "\n5. ReverseText"
                     + "\n0. Exit the application");
                 char input = ' '; //Creates the character input to be used with the switch-case below.
                 try
@@ -69,6 +70,9 @@ namespace Assignment4
                         break;
                     case '4':
                         CheckParanthesis();
+                        break;
+                    case '5':
+                        ReverseText();
                         break;
                     /*
                      * Extend the menu to include the recursive 
@@ -241,8 +245,7 @@ namespace Assignment4
                 }
                 else if(ch=='}'||ch==')'||ch==']'||ch=='>')
                 {
-
-                    if(lefts.Count<1)
+                    if (lefts.Count<1)
                     {
                         incorrClose = true;                      
                     }
@@ -256,12 +259,35 @@ namespace Assignment4
                         else if ((ch == '}' && peeked != '{')) { incorrClose = true; }
                         else if ((ch == '>' && peeked != '<')) { incorrClose = true; }
                         else { incorrClose = false; }
-
                     }
                 }
                 if (incorrClose) break; //out of loop in first error
             }
             Console.WriteLine(incorrClose);
+        }
+
+        private static void ReverseText()
+        {
+            Console.Write("text: ");
+            string input = Console.ReadLine();
+            if(!string.IsNullOrEmpty(input))
+            {
+                Stack<char> reversed = new Stack<char>();
+                for(int i=0;i<input.Length;i++)
+                {
+                    reversed.Push(input[i]);
+                }
+
+                Console.Write("reversed: ");
+                foreach (var ch in reversed)
+                {
+                    Console.Write($"{ch}");
+                }
+            }
+            else
+                Console.WriteLine("write something next time!");
+
+
         }
     }
 }
