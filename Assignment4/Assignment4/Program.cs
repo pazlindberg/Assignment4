@@ -7,7 +7,7 @@ using System.Collections.Generic;
  * 
  *  1.​​ Hur​ ​fungerar​ ​​stacken och​ ​​heapen?​ ​Förklara​ ​gärna​ ​med​ ​exempel​ ​eller​ ​skiss​ ​på​ ​dess grundläggande​ ​funktion
         SVAR: >>se illustrationen som är inkluderat i lösningen (assignment4real4.png)<< - 
-        Två minnes strukturer, kan man säga, varav stacken håller "koll" på egen hand. När minne inte används så frigörs det
+        Två minnes-strukturer, kan man säga, varav stacken håller "koll" på egen hand. När minne inte används så frigörs det
         automatiskt etc, medan minne på heapen fortsätter att vara allokerat tills dess att garbage collector frigör det - så kallad 
         fragmentering/defragmentering. Stacken lyder under principen last in first out.
 
