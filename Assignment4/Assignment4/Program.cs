@@ -28,20 +28,16 @@ namespace Assignment4
 {
     class Program
     {
-        /// <summary>
-        /// The main method, vill handle the menues for the program
-        /// </summary>
-        /// <param name="args"></param>
-        private static string[] ica = { "ICA öppnar och kön till kassan är tom",
-        "Kalle ställer sig i kön",
-            "Greta ställer sig i kön",
-            "Kalle blir expedierad och lämnar kön",
-            "Stina ställer sig i kön",
-            "Greta blir expedierad och lämnar kön",
-            "Olle ställer sig i kön" };
-    static void Main()
-        {
+        private static readonly string[] ica = {    "ICA öppnar och kön till kassan är tom",
+                                                    "Kalle ställer sig i kön",
+                                                    "Greta ställer sig i kön",
+                                                    "Kalle blir expedierad och lämnar kön",
+                                                    "Stina ställer sig i kön",
+                                                    "Greta blir expedierad och lämnar kön",
+                                                    "Olle ställer sig i kön" };
 
+        static void Main()
+        {
             while (true)
             {
                 Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
@@ -88,9 +84,6 @@ namespace Assignment4
             }
         }
 
-        /// <summary>
-        /// Examines the datastructure List
-        /// </summary>
         static void ExamineList()
         {
             /*
@@ -143,28 +136,13 @@ namespace Assignment4
 
             } while (running);
         }
-        /// <summary>
-        /// Examines the datastructure Queue
-        /// </summary>
+
         static void ExamineQueue()
         {
-            /*
-             * Loop this method untill the user inputs something to exit to main menue.
-             * Create a switch with cases to enqueue items or dequeue items
-             * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
-            */
             bool running = true;
             var queue = new Queue();
-
-            //queue.Enqueue("ICA öppnar och kön till kassan är tom");
-            //queue.Enqueue("Kalle ställer sig i kön");
-            //queue.Enqueue("Greta ställer sig i kön");
-            //queue.Enqueue("Kalle blir expedierad och lämnar kön");
-            //queue.Enqueue("Stina ställer sig i kön");
-            //queue.Enqueue("Greta blir expedierad och lämnar kön");
-            //queue.Enqueue("Olle ställer sig i kön");
+                      
             foreach (var s in ica) queue.Enqueue(s);
-
 
             do
             {
@@ -181,11 +159,9 @@ namespace Assignment4
                 {
                     case '+':
                         queue.Enqueue(value);
-                        //theList.Add(value);
                         break;
                     case '-':
                         queue.Dequeue();
-                        //theList.Remove(value);
                         break;
                     case 'q':
                     case 'Q':
@@ -195,15 +171,9 @@ namespace Assignment4
                         Console.WriteLine("only use + or -");
                         break;
                 }
-
-
             } while (running);
-
         }
 
-        /// <summary>
-        /// Examines the datastructure Stack
-        /// </summary>
         static void ExamineStack()
         {
             /*
@@ -236,11 +206,9 @@ namespace Assignment4
                 {
                     case '+':
                         stack.Push(value);
-                        //theList.Add(value);
                         break;
                     case '-':
                         stack.Pop();
-                        //theList.Remove(value);
                         break;
                     case 'q':
                     case 'Q':
@@ -250,7 +218,6 @@ namespace Assignment4
                         Console.WriteLine("only use + or -");
                         break;
                 }
-
 
             } while (running);
         }
@@ -294,10 +261,7 @@ namespace Assignment4
                 }
                 if (incorrClose) break; //out of loop in first error
             }
-
             Console.WriteLine(incorrClose);
         }
-
     }
 }
-
