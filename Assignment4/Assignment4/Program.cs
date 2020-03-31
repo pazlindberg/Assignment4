@@ -303,6 +303,8 @@ namespace Assignment4
          * 
          */
 
+            //slutsats: jag måste sätta mig nån stund och försöka ta ett grepp om rekursion, när det finns lite tid över
+
         private static void RecursiveEven() 
         {
             Console.WriteLine("Recursive Even 1" + RecursiveEvenCalc(1));
